@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz - Débloque le mot mystère</title>
+  <style>
+    body { font-family: Arial; margin: 30px; background-color: #f0f0f0; }
+    h1 { color: #333; }
+    .question { margin-bottom: 20px; }
+    #resultat, #motMystere { font-weight: bold; margin-top: 20px; }
+    #motMystere { color: green; font-size: 1.5em; }
+    button { padding: 10px 20px; font-size: 16px; }
+  </style>
+</head>
+<body>
+
+  <h1>Quiz : Obtenez 8/10 pour débloquer le mot mystère</h1>
+
+  <form id="quizForm">
+    <div class="question">
+      1. Quelle est la capitale de la France ?<br>
+      <input type="text" name="q1">
+    </div>
+    <div class="question">
+      2. Combien font 5 x 3 ?<br>
+      <input type="text" name="q2">
+    </div>
+    <div class="question">
+      3. Quelle est la couleur du ciel par temps clair ?<br>
+      <input type="text" name="q3">
+    </div>
+    <div class="question">
+      4. Quel est le contraire de chaud ?<br>
+      <input type="text" name="q4">
+    </div>
+    <div class="question">
+      5. Combien de lettres dans le mot "ordinateur" ?<br>
+      <input type="text" name="q5">
+    </div>
+    <div class="question">
+      6. Combien de côtés a un triangle ?<br>
+      <input type="text" name="q6">
+    </div>
+    <div class="question">
+      7. Quel est le nom du président français actuel ? (2025)<br>
+      <input type="text" name="q7">
+    </div>
+    <div class="question">
+      8. Quel est l’élément chimique dont le symbole est H ?<br>
+      <input type="text" name="q8">
+    </div>
+    <div class="question">
+      9. En quelle année a eu lieu la Révolution française ?<br>
+      <input type="text" name="q9">
+    </div>
+    <div class="question">
+      10. Combien de jours dans une semaine ?<br>
+      <input type="text" name="q10">
+    </div>
+
+    <button type="submit">Valider</button>
+  </form>
+
+  <div id="resultat"></div>
+  <div id="motMystere" style="display: none;">🎉 Mot mystère : <strong>CHOCOLAT</strong> 🎉</div>
+
+  <script>
+    const reponses = {
+      q1: "paris",
+      q2: "15",
+      q3: "bleu",
+      q4: "froid",
+      q5: "10",
+      q6: "3",
+      q7: "macron",
+      q8: "hydrogène",
+      q9: "1789",
+      q10: "7"
+    };
+
+    document.getElementById("quizForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      let score = 0;
+
+      for (let [key, value] of formData.entries()) {
+        if (value.trim().toLowerCase() === reponses[key]) {
+          score++;
+        }
+      }
+
+      document.getElementById("resultat").textContent = "Votre score : " + score + "/10";
+
+      if (score >= 8) {
+        document.getElementById("motMystere").style.display = "block";
+      } else {
+        document.getElementById("motMystere").style.display = "none";
+        alert("Score insuffisant. Vous devez recommencer !");
+      }
+    });
+  </script>
+
+</body>
+</html>
+
