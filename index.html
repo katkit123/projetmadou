@@ -29,6 +29,12 @@
       text-align: center;
       color: #2c3e50;
     }
+    .instruction {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 1rem;
+      color: #555;
+    }
     .question {
       margin-bottom: 20px;
       padding: 15px;
@@ -87,7 +93,8 @@
 <body>
 
   <div class="container">
-    <h1>Quiz : Obtiens minimum 8 bonnes reponses sur 10 pour débloquer le mot mystère ✨</h1>
+    <h1>Quiz : Obtenez 8/10 pour débloquer le mot mystère ✨</h1>
+    <p class="instruction">⚠️ Écris les réponses comme tu veux : majuscules, minuscules ou avec accents, tout sera accepté !</p>
 
     <form id="quizForm">
       <div class="question">
@@ -152,13 +159,22 @@
       q10: "marie"
     };
 
+    // fonction qui supprime accents + met en minuscule
+    function normaliser(texte) {
+      return texte
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .trim();
+    }
+
     document.getElementById("quizForm").addEventListener("submit", function(event) {
       event.preventDefault();
       const formData = new FormData(event.target);
       let score = 0;
 
       for (let [key, value] of formData.entries()) {
-        if (value.trim().toLowerCase() === reponses[key]) {
+        if (normaliser(value) === reponses[key]) {
           score++;
         }
       }
