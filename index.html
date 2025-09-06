@@ -5,13 +5,7 @@
   <title>Quiz - Débloque le mot mystère</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: "Segoe UI", Roboto, Arial, sans-serif;
       background: linear-gradient(135deg, #ece9e6, #ffffff);
@@ -20,7 +14,6 @@
       display: flex;
       justify-content: center;
     }
-
     .container {
       max-width: 700px;
       width: 100%;
@@ -30,14 +23,12 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       animation: fadeIn 0.6s ease-in-out;
     }
-
     h1 {
       font-size: 1.8rem;
       margin-bottom: 20px;
       text-align: center;
       color: #2c3e50;
     }
-
     .question {
       margin-bottom: 20px;
       padding: 15px;
@@ -45,17 +36,8 @@
       border-radius: 12px;
       transition: background 0.3s;
     }
-
-    .question:hover {
-      background: #eef2f7;
-    }
-
-    label {
-      font-weight: bold;
-      display: block;
-      margin-bottom: 8px;
-    }
-
+    .question:hover { background: #eef2f7; }
+    label { font-weight: bold; display: block; margin-bottom: 8px; }
     input[type="text"] {
       width: 100%;
       padding: 10px;
@@ -64,12 +46,7 @@
       font-size: 1rem;
       transition: border 0.3s;
     }
-
-    input[type="text"]:focus {
-      border-color: #6c5ce7;
-      outline: none;
-    }
-
+    input[type="text"]:focus { border-color: #6c5ce7; outline: none; }
     button {
       width: 100%;
       padding: 15px;
@@ -82,18 +59,12 @@
       cursor: pointer;
       transition: transform 0.2s, box-shadow 0.2s;
     }
-
-    button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-    }
-
+    button:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
     #resultat {
       margin-top: 20px;
       font-size: 1.2rem;
       text-align: center;
     }
-
     #motMystere {
       margin-top: 20px;
       font-size: 1.6rem;
@@ -103,12 +74,10 @@
       display: none;
       animation: pop 0.6s ease-in-out forwards;
     }
-
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
     @keyframes pop {
       0% { transform: scale(0.7); opacity: 0; }
       100% { transform: scale(1); opacity: 1; }
@@ -122,43 +91,43 @@
 
     <form id="quizForm">
       <div class="question">
-        <label>1. Quelle est la capitale de la France ?</label>
+        <label>1. Nous littéralement chaque jour des vacances scolaires au collège : "ok on se retrouve à la ... à 14h30 ?"</label>
         <input type="text" name="q1">
       </div>
       <div class="question">
-        <label>2. Combien font 5 x 3 ?</label>
+        <label>2. Nissou a beaucoup de surnoms, à tel point qu'on ne se souvient même plus que son vrai nom c'est Anaïs (wtf c'est vraiment ça ??), mais ton surnom préféré pour elle c'est ...</label>
         <input type="text" name="q2">
       </div>
       <div class="question">
-        <label>3. Quelle est la couleur du ciel par temps clair ?</label>
+        <label>3. Pour nos 18 ans vous nous avez fait beaucoup de gâteaux, et pour Romane quel était le motif ?</label>
         <input type="text" name="q3">
       </div>
       <div class="question">
-        <label>4. Quel est le contraire de chaud ?</label>
+        <label>4. On avait une prof d'anglais au collège qui nous faisait regarder Dawson et Friends en cours et qu'on aimait beaucoup, mais elle s'appelait comment déjà ?</label>
         <input type="text" name="q4">
       </div>
       <div class="question">
-        <label>5. Combien de lettres dans le mot "ordinateur" ?</label>
+        <label>5. À la base on lisait son blog, puis on a lu et relu ses BDs, ce n'est pas Pénélope ou Margaux, donc son pseudo c'est ...</label>
         <input type="text" name="q5">
       </div>
       <div class="question">
-        <label>6. Combien de côtés a un triangle ?</label>
+        <label>6. Elle est dure celle-là, mais après Skyblog on a eu un délire de publier nos photos sur la plateforme ...</label>
         <input type="text" name="q6">
       </div>
       <div class="question">
-        <label>7. Quel est le nom du président français actuel ? (2025)</label>
+        <label>7. Bonus si tu retrouves le nom du tien (indice : c'est le même que ton Skyblog) (j'ai vérifié on n'y a plus accès, tristesse et désespoir)</label>
         <input type="text" name="q7">
       </div>
       <div class="question">
-        <label>8. Quel est l’élément chimique dont le symbole est H ?</label>
+        <label>8. Sophie aussi avait un surnom au collège mais lequel ? Ça s'écrivait parfois avec un "Y" à la fin mais parfois avec un "I" comme ce qu'on cherche ici, et honnêtement je ne sais pas d'où on l'a sorti</label>
         <input type="text" name="q8">
       </div>
       <div class="question">
-        <label>9. En quelle année a eu lieu la Révolution française ?</label>
+        <label>9. Facile : avant qu'on ait toutes des téléphones, on se donnait rendez-vous sur ...</label>
         <input type="text" name="q9">
       </div>
       <div class="question">
-        <label>10. Combien de jours dans une semaine ?</label>
+        <label>10. Elles étaient sympas mais en vrai elles nous saoulaient bien : Roxane et ...</label>
         <input type="text" name="q10">
       </div>
 
@@ -166,21 +135,21 @@
     </form>
 
     <div id="resultat"></div>
-    <div id="motMystere">🎉 Mot mystère : <strong>CHOCOLAT</strong> 🎉</div>
+    <div id="motMystere">🎉 Mot mystère : <strong>SALON</strong> 🎉</div>
   </div>
 
   <script>
     const reponses = {
-      q1: "paris",
-      q2: "15",
-      q3: "bleu",
-      q4: "froid",
-      q5: "10",
-      q6: "3",
-      q7: "macron",
-      q8: "hydrogène",
-      q9: "1789",
-      q10: "7"
+      q1: "plaine",
+      q2: "twin-wife",
+      q3: "licorne",
+      q4: "angele",
+      q5: "diglee",
+      q6: "exsay",
+      q7: "summer-snows",
+      q8: "chnoupi",
+      q9: "msn",
+      q10: "marie"
     };
 
     document.getElementById("quizForm").addEventListener("submit", function(event) {
